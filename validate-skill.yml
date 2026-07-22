@@ -1,0 +1,50 @@
+name: Validate skill
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: SKILL.md exists
+        run: test -f SKILL.md || { echo "::error::SKILL.md is missing"; exit 1; }
+
+      - name: Frontmatter has name and description
+        run: |
+          head -n 1 SKILL.md | grep -qx -- '---' \
+            || { echo "::error::SKILL.md must open with a YAML frontmatter delimiter"; exit 1; }
+          awk 'NR>1 && /^---$/{exit} NR>1{print}' SKILL.md > /tmp/frontmatter.txt
+          grep -q '^name:' /tmp/frontmatter.txt \
+            || { echo "::error::frontmatter is missing 'name:'"; exit 1; }
+          grep -q '^description:' /tmp/frontmatter.txt \
+            || { echo "::error::frontmatter is missing 'description:'"; exit 1; }
+
+      - name: Referenced reference files resolve
+        run: |
+          # Pull every references/... path mentioned anywhere in the repo's markdown.
+          grep -rhoE 'references/[A-Za-z0-9._/-]+\.md' --include='*.md' . | sort -u > /tmp/refs.txt
+          : > /tmp/missing.txt
+          while read -r path; do
+            [ -f "$path" ] || echo "$path" >> /tmp/missing.txt
+          done < /tmp/refs.txt
+          if [ -s /tmp/missing.txt ]; then
+            while read -r path; do echo "::error::referenced file not found: $path"; done < /tmp/missing.txt
+            exit 1
+          fi
+          echo "All referenced files resolve:"
+          cat /tmp/refs.txt
+
+      - name: SKILL.md stays under 500 lines
+        run: |
+          lines=$(wc -l < SKILL.md)
+          echo "SKILL.md is $lines lines."
+          if [ "$lines" -gt 500 ]; then
+            echo "::error::SKILL.md exceeds 500 lines — move depth into references/"
+            exit 1
+          fi
