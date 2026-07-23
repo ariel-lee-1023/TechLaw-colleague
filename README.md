@@ -110,6 +110,8 @@ Issues and pull requests are welcome. Please:
 
 MIT © 2026 Ariel Lee. [See LICENSE](LICENSE).
 
+The license covers this repository's original text. It does not extend to the underlying source books, which remain the property of their respective copyright holders.
+
 ## Disclaimer
 
 Not legal advice. The skill encodes an analytical method, not the views of any living scholar, and it
