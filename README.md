@@ -108,11 +108,7 @@ Issues and pull requests are welcome. Please:
 
 ## License
 
-Released under the MIT License — see [LICENSE](LICENSE).
-
-If you would rather license prose as prose, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-is a common alternative for skills that are mostly written content; swap the `LICENSE` file and this
-section if you prefer it.
+MIT © 2026 Ariel Lee. [See LICENSE](LICENSE).
 
 ## Disclaimer
 
