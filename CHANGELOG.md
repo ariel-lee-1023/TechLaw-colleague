@@ -33,5 +33,5 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), read for 
 - Repository scaffolding: `README.md`, `LICENSE`, `.gitignore`, `CHANGELOG.md`, and a CI check that
   validates the skill frontmatter and the internal reference paths.
 
-[Unreleased]: https://github.com/<your-username>/technology-law-expert-colleague/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/<your-username>/technology-law-expert-colleague/releases/tag/v1.0.0
+[Unreleased]: https://github.com/ariel-lee-1023/TechLaw-colleague/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/ariel-lee-1023/TechLaw-colleague/releases/tag/v1.0.0

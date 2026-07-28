@@ -55,7 +55,7 @@ small.
 **Claude Code / agents that read a skills directory**
 
 ```bash
-git clone https://github.com/<your-username>/technology-law-expert-colleague.git \
+git clone https://github.com/ariel-lee-1023/TechLaw-colleague.git \
   ~/.claude/skills/technology-law-expert-colleague
 ```
 
