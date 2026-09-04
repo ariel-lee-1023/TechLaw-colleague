@@ -21,6 +21,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), read for 
   host-facing/maintainer-facing boundary.
 
 ### Changed
+- Reframed the project consistently as a platform-neutral Agent Skill and replaced product-specific
+  installation language with runtime-neutral directory, upload, and persistent-instruction options.
 - Expanded `references/frameworks.md` into a cross-move framework router with precise named
   constructs and handoff rules.
 - Replaced the informal loading note in `SKILL.md` with an explicit trigger table and current-law,

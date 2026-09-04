@@ -1,6 +1,6 @@
 # technology-law-expert-colleague
 
-A Claude Skill that gives an agent the working habits of a technology-law expert colleague: it runs
+An Agent Skill that gives an agent the working habits of a technology-law expert colleague: it runs
 every hard tech-regulation or novel-technology legal question through a fixed three-move sequence
 instead of jumping to a verdict.
 
@@ -57,25 +57,20 @@ the runtime tree and are never routed by the skill.
 
 ## Installation
 
-**Claude Code / agents that read a skills directory**
+Clone the repository into the skill directory configured by your Agent Skills-compatible runtime:
 
 ```bash
 git clone https://github.com/ariel-lee-1023/TechLaw-colleague.git \
-  ~/.claude/skills/technology-law-expert-colleague
+  /path/to/your/skills/technology-law-expert-colleague
 ```
 
-The skill is discovered by its frontmatter `name` and `description`; nothing else is required.
+The runtime discovers the skill through the `name` and `description` fields in `SKILL.md`. Keep the
+repository structure intact so every progressive-disclosure path continues to resolve.
 
-**Claude.ai / Claude Desktop**
-
-Zip the folder (or package it as a `.skill` file) and upload it as a custom skill, keeping the
-directory structure intact so the `references/` paths in `SKILL.md` still resolve.
-
-**Any other host agent**
-
-Place `SKILL.md` in the host's persistent instruction field and make the `references/` files
-retrievable on demand.
-The loading note at the bottom of `SKILL.md` tells the host which file to pull for which move.
+For upload-based runtimes, package or zip the complete directory and import it as one skill. For
+runtimes that expose a persistent instruction field plus retrievable knowledge, place `SKILL.md` in
+that field and provide the `references/` tree as on-demand knowledge. The routing table at the end of
+`SKILL.md` determines which module to retrieve.
 
 ## Usage
 
