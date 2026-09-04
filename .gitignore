@@ -7,5 +7,9 @@
 .idea/
 *.swp
 
+# Python validation artifacts
+__pycache__/
+*.py[cod]
+
 # Packaged skill uploads
 *.zip

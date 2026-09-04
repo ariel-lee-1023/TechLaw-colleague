@@ -12,7 +12,20 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), read for 
 ## [Unreleased]
 
 ### Added
-- `references/provenance.md` — source basis, confidence levels, and reuse policy.
+- Full reference-depth distillation across all five source works, expanding the three runtime
+  clusters from brief sketches into budgeted diagnostic modules with decision rules, limitations,
+  and cross-domain applications.
+- `fidelity-ledger/provenance.md` — corpus, method, confidence, source-era, and budget record.
+- `fidelity-ledger/coverage.md` — source-unit coverage map with explicit compression boundaries.
+- `tools/validate_distillation.py` and CI enforcement for computed cluster budgets and the
+  host-facing/maintainer-facing boundary.
+
+### Changed
+- Expanded `references/frameworks.md` into a cross-move framework router with precise named
+  constructs and handoff rules.
+- Replaced the informal loading note in `SKILL.md` with an explicit trigger table and current-law,
+  attribution, and non-narration boundaries.
+- Moved provenance out of the host-loaded `references/` tree into `fidelity-ledger/`.
 
 ## [1.0.0] — 2026-07-22
 

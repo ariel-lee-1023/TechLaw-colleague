@@ -28,12 +28,16 @@ advice.
 technology-law-expert-colleague/
 ├── SKILL.md                              # the skill itself (YAML frontmatter + instructions)
 ├── references/
-│   ├── frameworks.md                     # named constructs, defined in their source sense
-│   ├── provenance.md                     # sources, confidence, and reuse policy
+│   ├── frameworks.md                     # named constructs + cross-move handoffs
 │   └── clusters/
 │       ├── institutional-reflex.md       # Move 1 depth — comparative-institutional machinery
 │       ├── efficiency-refusal.md         # Move 2 depth — efficiency refusal, human expertise
 │       └── doctrinal-mechanics.md        # Move 3 depth — doctrinal joints, policy levers
+├── fidelity-ledger/                      # maintainer-only; never loaded as advice
+│   ├── provenance.md                     # corpus, method, budget record, boundaries
+│   └── coverage.md                       # every source unit → retained structure
+├── tools/
+│   └── validate_distillation.py          # stdlib budget/boundary validator
 ├── CHANGELOG.md
 ├── LICENSE
 └── .gitignore
@@ -41,7 +45,8 @@ technology-law-expert-colleague/
 
 `SKILL.md` is loaded whenever the skill triggers. The files under `references/` are **progressive
 disclosure**: the agent loads only the cluster the current move needs, so the base context stays
-small.
+small. Files under `fidelity-ledger/` are for maintainers and auditing; they are deliberately outside
+the runtime tree and are never routed by the skill.
 
 | Load this | When the question turns on |
 | --- | --- |
@@ -68,7 +73,8 @@ directory structure intact so the `references/` paths in `SKILL.md` still resolv
 
 **Any other host agent**
 
-Copy `SKILL.md` into your system prompt and make the `references/` files retrievable on demand.
+Place `SKILL.md` in the host's persistent instruction field and make the `references/` files
+retrievable on demand.
 The loading note at the bottom of `SKILL.md` tells the host which file to pull for which move.
 
 ## Usage
@@ -94,7 +100,31 @@ doctrinal fork rather than a verdict.
 - **The register shift is intentional.** Long and periodic in Move 1, tight and semicolon-linked in
   Move 2, crisp and conditional in Move 3.
 
-See `references/provenance.md` for the source basis and reuse policy.
+## Distillation quality and budgets
+
+This repository uses the Books-to-Skill-Refs discipline while preserving its pre-existing
+three-cluster architecture. The full source structure was distilled into the runtime modules; it was
+not converted into one file per book because the intended load unit is one analytical move.
+
+Each cluster is measured as a whole-load, text-heavy, `reference`-depth unit. The budget scales with
+the total number of source chapters or major sections feeding that cluster:
+
+```text
+budget = 1,700 + (1,050 + 1,500 × sqrt(sections)) × 0.55
+acceptance band = budget ±10%          hard cap = 8,500 tokens
+```
+
+Current realized sizes:
+
+| Runtime cluster | Source sections | Target | Allowed band | Realized |
+| --- | ---: | ---: | ---: | ---: |
+| institutional-reflex | 18 | 5,778 | 5,201–6,355 | 6,206 |
+| efficiency-refusal | 8 | 4,611 | 4,150–5,072 | 4,811 |
+| doctrinal-mechanics | 20 | 5,967 | 5,371–6,563 | 6,403 |
+
+Run `python3 tools/validate_distillation.py` to reproduce the measurement. CI also checks the runtime
+versus maintainer-documentation boundary. See `fidelity-ledger/provenance.md` for corpus and method,
+and `fidelity-ledger/coverage.md` for the source-to-module acceptance ledger.
 
 ## Contributing
 
@@ -102,6 +132,9 @@ Issues and pull requests are welcome. Please:
 
 - keep `SKILL.md` under ~500 lines and push depth into `references/`;
 - preserve exact framework terminology, or explain in the PR why a term should change;
+- keep provenance, sourcing, fidelity, and maintenance notes in `fidelity-ledger/`, never in the
+  host-loaded `references/` tree;
+- run `python3 tools/validate_distillation.py` and keep every cluster inside its computed band;
 - update `CHANGELOG.md` under `[Unreleased]`;
 - avoid adding verbatim quotation from the underlying copyrighted works beyond the short anchors
   already present for auditing purposes.

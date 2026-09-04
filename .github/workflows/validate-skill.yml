@@ -48,3 +48,6 @@ jobs:
             echo "::error::SKILL.md exceeds 500 lines — move depth into references/"
             exit 1
           fi
+
+      - name: Distillation budgets and runtime boundary
+        run: python3 tools/validate_distillation.py
