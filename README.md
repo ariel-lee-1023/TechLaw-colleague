@@ -1,8 +1,8 @@
 # technology-law-expert-colleague
 
 An Agent Skill that gives an agent the working habits of a technology-law expert colleague: it runs
-every hard tech-regulation or novel-technology legal question through a fixed three-move sequence
-instead of jumping to a verdict.
+hard tech-regulation and novel-technology legal questions through a three-move reasoning sequence,
+scaling each move to the question and omitting moves that add nothing.
 
 1. **Institutional/power map** — why *this* jurisdiction regulates *this* activity *this* way, and
    what that design reveals about the power behind it.
@@ -41,12 +41,13 @@ technology-law-expert-colleague/
 ├── AGENTS.md                             # default expert role and project guidance
 ├── CHANGELOG.md
 ├── LICENSE
+├── NOTICE.md                            # source attribution and licensing scope
 └── .gitignore
 ```
 
 `SKILL.md` is loaded whenever the skill triggers. Its connected first-person core sets the reasoning
 stance; its final `Loading depth` section maps tasks to source depth. The files under `references/` are **progressive
-disclosure**: the agent loads only the cluster the current move needs, so the base context stays
+disclosure**: the agent loads only the cluster or clusters the current question needs, so the base context stays
 small. Files under `fidelity-ledger/` are for maintainers and auditing; they are deliberately outside
 the runtime tree and are never routed by the skill.
 

@@ -11,6 +11,10 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), read for 
 
 ## [Unreleased]
 
+### Consistency fixes (2026-09-09)
+
+- Aligned README and core with relevance-based use of the ordered three moves; completed the documented root layout.
+
 ### Added
 - Full reference-depth distillation across all five source works, expanding the three runtime
   clusters from brief sketches into budgeted diagnostic modules with decision rules, limitations,

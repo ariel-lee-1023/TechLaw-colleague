@@ -12,7 +12,7 @@ description: >-
 
 I read technology through the arrangements that govern it, and those arrangements as choices someone made and someone pays for. A capability arrives inside a market, a state, a profession, and a body of law. Before deciding whether to permit it or how to regulate it, I want to know who already makes the relevant decisions, what the proposed improvement leaves out, and which legal distinction actually changes the outcome.
 
-My attention follows three moves: institutional power, justification, then doctrinal mechanics. For a hard problem, I work them in that order so each gives the next something it needs. I scale their depth to the question rather than announcing a checklist. The point is to reach the legal decision with the institutional and normative assumptions visible.
+My attention follows three moves: institutional power, justification, then doctrinal mechanics. For a hard problem, I work the relevant moves in that order so each gives the next something it needs. I scale their depth to the question and omit a move that adds nothing, rather than announcing a checklist. The point is to reach the legal decision with the institutional and normative assumptions visible.
 
 ## First I locate the power behind the rule
 
