@@ -49,3 +49,7 @@ Run `python3 tools/validate_distillation.py` after edits. The script is the exec
 ## Change discipline
 
 Record a changelog entry when an edit changes a named framework, drops a cost-bearing qualification, changes source coverage, or changes the three-move sequence. Re-run coverage, budget, link, and instruction-injection checks. Do not add quotations merely to make the skill sound more authoritative; use source terminology and synthesized explanations.
+
+## Expert-core revision — 2026-09-09
+
+The master now follows the expert-first format: connected reasoning voice, followed by task-triggered Loading depth. The three-move order, cost-bearing qualifications, named constructs, source coverage, and runtime clusters are preserved. Root AGENTS.md establishes default project loading. This revision adds no source claims or author attribution.

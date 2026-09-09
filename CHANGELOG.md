@@ -21,6 +21,9 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), read for 
   host-facing/maintainer-facing boundary.
 
 ### Changed
+- Rewrote the master as connected first-person expert prose while preserving the institutional → efficiency → doctrinal sequence, cost-bearing commitments, and deliberate register shifts.
+- Standardized the final Loading depth table with direct Markdown links to all four runtime modules.
+- Added root AGENTS.md and preserved the three-cluster architecture and maintainer/runtime boundary.
 - Reframed the project consistently as a platform-neutral Agent Skill and replaced product-specific
   installation language with runtime-neutral directory, upload, and persistent-instruction options.
 - Expanded `references/frameworks.md` into a cross-move framework router with precise named

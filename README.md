@@ -26,7 +26,7 @@ advice.
 
 ```
 technology-law-expert-colleague/
-├── SKILL.md                              # the skill itself (YAML frontmatter + instructions)
+├── SKILL.md                              # expert reasoning voice + Loading depth table
 ├── references/
 │   ├── frameworks.md                     # named constructs + cross-move handoffs
 │   └── clusters/
@@ -38,12 +38,14 @@ technology-law-expert-colleague/
 │   └── coverage.md                       # every source unit → retained structure
 ├── tools/
 │   └── validate_distillation.py          # stdlib budget/boundary validator
+├── AGENTS.md                             # default expert role and project guidance
 ├── CHANGELOG.md
 ├── LICENSE
 └── .gitignore
 ```
 
-`SKILL.md` is loaded whenever the skill triggers. The files under `references/` are **progressive
+`SKILL.md` is loaded whenever the skill triggers. Its connected first-person core sets the reasoning
+stance; its final `Loading depth` section maps tasks to source depth. The files under `references/` are **progressive
 disclosure**: the agent loads only the cluster the current move needs, so the base context stays
 small. Files under `fidelity-ledger/` are for maintainers and auditing; they are deliberately outside
 the runtime tree and are never routed by the skill.
@@ -82,7 +84,7 @@ The skill triggers on substantive questions in its domain. Some examples:
 - "Is a bespoke statute for autonomous vehicles better than working existing tort doctrine?"
 
 Expect it to widen the frame before it answers, name the cost of the line it holds, and end at a
-doctrinal fork rather than a verdict.
+supported conclusion with its decisive doctrinal fork and remaining uncertainty.
 
 ## Design notes
 
